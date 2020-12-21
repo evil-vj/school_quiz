@@ -1,0 +1,71 @@
+<html> 
+    <head> 
+        <script> 
+           
+            function checkPassword(form) { 
+                password1 = form.password1.value; 
+                password2 = form.password2.value; 
+  
+               
+                if (password1 == '') 
+                    alert ("Please enter Password"); 
+                      
+                
+                else if (password2 == '') 
+                    alert ("Please enter confirm password"); 
+                      
+                   
+                else if (password1 != password2) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+  
+                 
+                else{ 
+                    alert("Password Match: Welcome to Bharath Geeks!") 
+                    return true; 
+                } 
+            } 
+        </script> 
+        <style> 
+            body {
+  background-image: url('Loginbg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.red{
+   color:yellow;
+}
+.thick{
+   font-size:20px;
+}
+        </style> 
+    </head> 
+    <body> 
+         
+        <form onSubmit = "return checkPassword(this)"> 
+        <table border = 1 align = "center">
+            <tr class="thick red">
+                
+                <td>Username:</td> 
+                <td><input type = text name = name size = 25</td> 
+            </tr> 
+            <tr class="thick red"> 
+                
+                <td>Password:</td> 
+                 <td><input type = password name = "password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_,$,#]).{8}" title="Must contain 8 letters with atleat one number, one upper case and any one of these (_,$,#)"></td>
+            </tr> 
+            <tr class="thick red"> 
+                
+                <td>Confirm Password:</td> 
+                <td><input type="password" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_,$,#]).{8}" title="Must contain six letters with atleat one number"></td></tr>
+            </tr> 
+            <tr> 
+                <td colspan = 2 align = right> 
+                <input type = submit value = "Submit"></td> 
+            </tr> 
+        </table> 
+        </form> 
+    </body> 
+</html>                
